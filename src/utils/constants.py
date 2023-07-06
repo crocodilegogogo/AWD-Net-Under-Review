@@ -8,11 +8,11 @@ def parse_args():
       
       parser.add_argument('--PATTERN', type=str, default='TRAIN',
                           help='pattern: TRAIN, TEST')
-      parser.add_argument('--DATASETS', type=list, default=['SEU'],
+      parser.add_argument('--DATASETS', nargs='+', default=['SEU'],
                           help='dataset name: CWRU_10, XJTU, SEU')
       parser.add_argument('--CLASSIFIERS_all', nargs='+', default=['AWD_Net'],
                           help='classifier name: Resnet18, WDCNN, MCNN_LSTM, DRSN_CW, LiftingNet, WaveletKernelNet, Wavelet_SANet')
-      parser.add_argument('--BATCH_SIZE', nargs='+', default=64,
+      parser.add_argument('--BATCH_SIZE', type=int, default=64,
                           help='training batch size: 64')
       parser.add_argument('--EPOCH', type=int, default=200,
                           help='training epoches: 200')
